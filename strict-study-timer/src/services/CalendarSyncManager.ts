@@ -2,7 +2,7 @@ import type { Task } from '../types';
 import { isPast } from 'date-fns';
 
 // Placeholder Client ID - User to replace this later
-const CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID_PLACEHOLDER';
+const CLIENT_ID = '906164086846-o2bn749cnjgao8k7krdq789oam77p25r.apps.googleusercontent.com';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
@@ -48,7 +48,7 @@ export class CalendarSyncManager {
     this.tokenClient = window.google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
-      callback: '', // defined at request time
+      callback: () => {}, // defined at request time
     });
     this.gisInited = true;
   }

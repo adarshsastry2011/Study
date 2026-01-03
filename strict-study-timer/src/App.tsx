@@ -17,8 +17,7 @@ function App() {
       setTasks(fetchedTasks);
     } catch (err: any) {
       console.error("Sync failed:", err);
-      // Fallback for demo purposes if ID is invalid
-      // Relaxed check: Fallback on ANY error since we know the ID is a placeholder
+      // Fallback for demo purposes if ID is invalid or not configured correctly in Cloud Console
       const errorMessage = err?.message || "Unknown error";
       setError(`Google Sync failed (${errorMessage}). Loading Demo Data...`);
       setTimeout(() => loadDemoData(), 1500);
