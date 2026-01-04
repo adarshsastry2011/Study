@@ -1,53 +1,36 @@
 # Strict Study Timer
 
-A tablet-optimized web application that helps you strictly follow your schedule by syncing with Google Calendar.
+A tablet-optimized "Strict Mode" study timer that syncs with Google Calendar.
 
-## Features
-*   **One-Tap Sync:** Pulls today's events from Google Calendar.
-*   **Strict Mode:**
-    *   **Green:** Active/Future tasks.
-    *   **Red:** Time Over (missed) tasks.
-*   **Tablet Layout:** Designed for touch and larger screens.
+## 🚀 How to Install on Tablet (The "No Terminal" Way)
 
-## Setup & Run
+The easiest way to get this on your tablet is to put the website on the internet (Deploy). This requires **zero cables** and **zero terminal commands** on your tablet.
 
-1.  **Install Dependencies:**
+### Step 1: Prepare the Files
+1.  Open your terminal on your computer *one last time*.
+2.  Run this command to create the website files:
     ```bash
     cd strict-study-timer
-    npm install
+    npm run build
     ```
+3.  This creates a folder named `dist`. This folder contains your entire app.
 
-2.  **Start the Server:**
-    ```bash
-    npm run dev
-    ```
+### Step 2: Put it on the Internet (Free)
+1.  Go to [Netlify Drop](https://app.netlify.com/drop) (or create a Vercel account).
+2.  Drag and drop the `dist` folder onto the page.
+3.  Netlify will give you a website link (e.g., `https://random-name-123.netlify.app`).
 
-3.  **Open in Browser:**
-    *   Visit `http://localhost:5173` on your computer.
+### Step 3: Configure Google Login
+1.  Go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
+2.  Find your Client ID.
+3.  Add your **new Netlify URL** to "Authorized JavaScript origins".
+    *   *Example:* `https://random-name-123.netlify.app`
+4.  Click **Save**.
 
-## How to Run on Android Tablet (Samsung S11)
+### Step 4: Install on Tablet
+1.  Open Chrome on your S11 Tablet.
+2.  Go to your new URL.
+3.  Tap the **Three Dots Menu** (top right) -> **Add to Home Screen**.
+4.  Tap **Install**.
 
-To use this app on your tablet while running the code on your computer, use **Chrome Port Forwarding**. This allows your tablet to access `localhost` on your computer.
-
-1.  **Connect via USB:** Plug your S11 tablet into your computer.
-2.  **Enable USB Debugging (Tablet):**
-    *   Go to **Settings > About tablet > Software information**.
-    *   Tap **Build number** 7 times to enable Developer Options.
-    *   Go back to **Settings > Developer options**.
-    *   Turn on **USB debugging**.
-    *   Tap "Allow" if prompted on the screen.
-3.  **Configure Chrome (Computer):**
-    *   Open Chrome on your computer.
-    *   Type `chrome://inspect/#devices` in the address bar.
-    *   Check the box **Enable Port Forwarding**.
-    *   Click **Configure...** (next to Port Forwarding).
-    *   Add a new rule:
-        *   **Port:** `5173`
-        *   **IP and Port:** `localhost:5173`
-    *   Click **Done**.
-4.  **Run the App:**
-    *   Ensure `npm run dev` is running on your computer.
-5.  **Open on Tablet:**
-    *   Open Chrome on your S11 Tablet.
-    *   Go to `http://localhost:5173`.
-    *   The app should load, and Google Sync will work!
+Now you have a **Real App** on your home screen. No terminals, no cables.

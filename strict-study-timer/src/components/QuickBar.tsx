@@ -28,6 +28,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '16px 24px',
+    paddingTop: 'max(16px, env(safe-area-inset-top))', // Handle notch/status bar
     backgroundColor: '#ffffff',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
     position: 'sticky' as 'sticky',
